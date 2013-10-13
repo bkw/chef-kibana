@@ -9,7 +9,7 @@ server {
     index  index.html  index.htm; 
   }
 
-  location ~ ^/_aliases$ {
+  location ~ ^/_(aliases|nodes)$ {
     proxy_pass http://<%= @es_server %>:<%= @es_port %>;
     proxy_read_timeout 90;
   }
