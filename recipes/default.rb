@@ -29,7 +29,7 @@ end
 if node['kibana']['user'].empty?
   unless node['kibana']['webserver'].empty?
     webserver = node['kibana']['webserver']
-    kibana_user = node[webserver]['user']
+    kibana_user = node['kibana']['webserver']['user']
   else
     kibana_user = "nobody"
   end
